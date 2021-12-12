@@ -25,6 +25,7 @@ def __get_api_key() -> str:
         try:
             with open('.api.txt', 'r') as f:
                 res = f.read()
+                res = res.rstrip("\n")
         except IOError:
             pass
     if not res:
